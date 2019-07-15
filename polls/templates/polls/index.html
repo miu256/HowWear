@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% load static %}
+<img src="{% static 'polls/images/top.jpg' %}" class="img-fluid">
+<br>
+<p class="float-right">Photo by Kai Pilger on Unsplash</p>
+<br>
+<br>
+
+<div class="alert alert-danger" role="alert">着ていく服に悩むあなたをサポートします</div>
+<br>
+
+<h5>お住まい地域を選んでください:</h5>
+<br>
+
+{% if latest_question_list %}
+    <div class="list-group">
+    {% for question in latest_question_list %}
+        <a href="{% url 'polls:detail' question.id %}" class="list-group-item">{{ question.question_text }}</a>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>質問がありません。</p>
+{% endif %}
+<br>
+<br>
+
+{% endblock %}

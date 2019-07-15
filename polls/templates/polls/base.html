@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>HowWear</title>
+
+    <!-- Bootstrap CSS-->
+    <link href="{% static 'polls/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+	<link rel="icon" type="image/png" href="{% static 'polls/images/favicon.png' %}"/>
+</head>
+<body>
+	<nav class="navbar navbar-dark", style="background-color:pink;">
+	    <a class="navbar-brand" href="{% url 'polls:index' %}">HowWear</a>
+	</nav>
+<br>
+
+<div class="container">
+	{% block body %}
+	{% endblock %}
+</div>
+
+</body>
+</html>

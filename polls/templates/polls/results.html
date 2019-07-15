@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<h1>{{ question.question_text }}</h1>
+<br>
+
+<p class="text-danger">みんなの投票結果は...</p>
+
+<ul class="list-group" style="max-width: 300px;">
+{% for choice in question.choice_set.all %}
+    <li class="list-group-item border-danger">{{ choice.choice_text }}  :  計 {{ choice.votes }} 票</li>
+{% endfor %}
+</ul>
+
+<br>
+
+<!---Chart.jsによる円グラフ--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+<canvas id="myChart" style="width: 100%; height:400px;"></canvas>
+<script type="text/javascript">
+    var chartChart = document.getElementById("myChart");
+    new Chart(chartChart, {
+        type: 'pie',
+        data: {
+            labels: ["厚着", "薄着"],
+            datasets: [{
+                labels: "総票数",
+                data: ["{% for choice in question.choice_set.all %}{{ choice.votes }}","{% endfor %}"],
+                backgroundColor: [
+                    'rgba(255, 80, 80, 0.4)',
+                    'rgba(150, 235, 255, 0.4)',
+                ],
+                borderColor: [
+                    'rgba(255, 80, 80, 0.8)',
+                    'rgba(150, 235, 255, 0.8)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+<br>
+
+<a class="btn btn-danger" href="{% url 'polls:index' %}" role="button">一覧に戻る</a>
+
+{% endblock %}
