@@ -7,6 +7,8 @@ HowWearは、気温変化の激しい今日において、着ていく服に悩�
 まずは、あなたが今日厚着で外出するか、薄着で外出するかどうかを投票してみましょう。  
 投票後に、他の皆がどうであるのかを確認することができ、より良い決断を下すことができるでしょう。    
 <br>
+[HowWear説明資料](https://github.com/miu256/HowWear/files/3414853/HowWear.pdf)  
+<br>
 
 ![HowWearGif](https://user-images.githubusercontent.com/48997441/61196959-10d02280-a70d-11e9-80b0-3365707d127a.gif)  
 <br>
