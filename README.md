@@ -16,7 +16,7 @@ HowWearは、気温変化の激しい今日において、着ていく服に悩�
 ### Dependency  
 * Python 3.6.8  
 * pip 18.1  
-* Django 2.2.3  
+* Django 2.2.8  
 <br>
 
 ### 環境構築手順  
